@@ -1,4 +1,4 @@
-FROM devopsil/puppet
+FROM devopsil/puppet:latest
 MAINTAINER Evgeny Zislis <evgeny@devops.co.il>
 
 RUN yum install puppet-server -y
