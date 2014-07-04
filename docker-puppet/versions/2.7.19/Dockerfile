@@ -1,3 +1,3 @@
 FROM devopsil/puppet-yum
 
-RUN yum install -y puppet-2.7.19
+RUN yum install -y puppet-2.7.19 && yum clean all

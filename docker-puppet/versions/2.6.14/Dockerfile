@@ -1,3 +1,3 @@
 FROM devopsil/puppet-yum
 
-RUN yum install -y puppet-2.6.14
+RUN yum install -y puppet-2.6.14 && yum clean all

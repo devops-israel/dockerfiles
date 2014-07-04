@@ -1,3 +1,3 @@
 FROM devopsil/puppet-yum
 
-RUN yum install -y puppet-3.3.0
+RUN yum install -y puppet-3.3.0 && yum clean all
