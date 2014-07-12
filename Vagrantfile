@@ -1,4 +1,3 @@
-ENV['VAGRANT_LOG'] = 'debug'
 ENV['VAGRANT_NO_PLUGINS'] = 'true'
 
 VAGRANT_VBOX_MEMORY = ENV.fetch 'VBOX_MEMORY', '2048'
@@ -14,4 +13,11 @@ Vagrant.configure('2') do |v|
     vb.name   = "boot2docker"
     vb.customize [ "modifyvm", :id, "--natnet1", VAGRANT_VBOX_NET ]
   end
+
+  v.vm.synced_folder '.', '/vagrant', nfs: true, mount_options: ['nolock,vers=3,udp']
+  v.vm.network :private_network, ip: '172.19.69.15'
+end
+
+class Vagrant::Action::Builtin::WaitForCommunicator
+  def call(env); end # do nothing!
 end
