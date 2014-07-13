@@ -1,6 +1,8 @@
 FROM devopsil/puppet:latest
 
-RUN yum install puppet-server -y \
+# from devopsil/puppet ENV PUPPET_VERSION x.x.x
+
+RUN yum install puppet-server-$PUPPET_VERSION -y \
     && yum clean all
 
 ADD puppet.conf /etc/puppet/puppet.conf

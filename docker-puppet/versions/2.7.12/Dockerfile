@@ -1,3 +1,6 @@
 FROM devopsil/puppet-yum
 
-RUN yum install -y puppet-2.7.12 && yum clean all
+ENV PUPPET_VERSION 2.7.12
+
+RUN yum install -y puppet-$PUPPET_VERSION \
+    && yum clean all
