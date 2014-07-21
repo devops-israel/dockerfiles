@@ -14,7 +14,7 @@ Vagrant.configure('2') do |v|
     vb.customize [ "modifyvm", :id, "--natnet1", VAGRANT_VBOX_NET ]
   end
 
-  if not Vagrant::Util::Platform.windows? \
+  if not Vagrant::Util::Platform.windows?
     v.vm.synced_folder '.', '/vagrant', nfs: true, mount_options: ['nolock,vers=3,udp']
     v.vm.network :private_network, ip: '172.19.69.15'
   end
