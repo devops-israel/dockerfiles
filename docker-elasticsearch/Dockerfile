@@ -19,6 +19,6 @@ ENV WORK_DIR       /tmp/elasticsearch
 ADD elasticsearch.sh   /elasticsearch.sh
 
 EXPOSE 9200 9300
-VOLUME [ "/var/log/elasticsearch", "/var/log/elasticsearch" ]
+VOLUME [ "/var/lib/elasticsearch", "/var/log/elasticsearch" ]
 
 ENTRYPOINT [ "/elasticsearch.sh" ]
