@@ -1,5 +1,6 @@
 FROM devopsil/java
 
+# elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 ADD elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo
 RUN rpm --import http://packages.elasticsearch.org/GPG-KEY-elasticsearch \
     && yum install -y elasticsearch-1.3.4 \
